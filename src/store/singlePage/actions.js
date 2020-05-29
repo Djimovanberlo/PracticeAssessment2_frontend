@@ -1,17 +1,25 @@
-// import axios from "axios";
+import axios from "axios";
 
-// const storeHomePages = (homePageData) => ({
-//   type: "ONE_HOMEPAGES",
-//   payload: homePageData,
-// });
+// import { apiUrl } from "../../config/constants";
 
-// export default async function fetchOnePage(dispatch, getState) {
-//   const stateCheck = getState().homePages;
-//   if (stateCheck.length === 0) {
-//     const res = await axios.get("http://localhost:4000/");
-//     console.log("res.data:", res.data);
-//     dispatch(storeHomePages(res.data));
-//   } else {
-//     console.log("pages already fetched");
-//   }
-// }
+const storeHomePage = (homePageData) => ({
+  type: "ONE_HOMEPAGE",
+  payload: homePageData,
+});
+
+export default function fetchOnePage(id) {
+  return async function (dispatch, getState) {
+    console.log("id", id);
+    //   console.log("ww", apiUrl);
+    //   const stateCheck = getState().onePage;
+    //   if (stateCheck.length === 0) {
+    const res = await axios.get(`http://localhost:4000/homepage/${id}`);
+    console.log("res.data:", res.data);
+    //   dispatch(storeHomePage(res.data));
+    //   } else {
+    //     console.log("page already fetched");
+    //   }
+  };
+}
+
+// "http://localhost:4000/"
