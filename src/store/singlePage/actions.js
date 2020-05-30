@@ -3,7 +3,7 @@ import axios from "axios";
 // import { apiUrl } from "../../config/constants";
 
 const storeHomePage = (homePageData) => ({
-  type: "ONE_HOMEPAGE",
+  type: "SINGLE_PAGE",
   payload: homePageData,
 });
 
@@ -15,7 +15,7 @@ export default function fetchOnePage(id) {
     //   if (stateCheck.length === 0) {
     const res = await axios.get(`http://localhost:4000/homepage/${id}`);
     console.log("res.data:", res.data);
-    //   dispatch(storeHomePage(res.data));
+    dispatch(storeHomePage(res.data));
     //   } else {
     //     console.log("page already fetched");
     //   }

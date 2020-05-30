@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 export default function Home() {
   const dispatch = useDispatch();
   const homePageList = useSelector(selectAllHomePages);
+  console.log("list", homePageList);
 
   useEffect(() => {
     dispatch(fetchHomePages);
@@ -26,7 +27,7 @@ export default function Home() {
 
   return (
     <div>
-      <div>Home!</div>
+      <div>See all homepages</div>
       <div>{mappedHomePages}</div>
     </div>
   );
