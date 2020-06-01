@@ -3,10 +3,10 @@ import { selectToken, selectUser } from "../user/selectors";
 
 // import { apiUrl } from "../../config/constants";
 
-// const storeHomePage = (homePageData) => ({
-//   type: "SINGLE_PAGE",
-//   payload: homePageData,
-// });
+const storeStory = (storyData) => ({
+  type: "NEW_STORY",
+  payload: storyData,
+});
 
 export function makeStory(formData) {
   return async function (dispatch, getState) {
@@ -27,8 +27,9 @@ export function makeStory(formData) {
         },
       }
     );
-    console.log("da res", response);
-    // dispatch response
+    console.log("da res", response.data);
+    // dispatch response.data
+    dispatch(storeStory(response.data));
   };
 }
 

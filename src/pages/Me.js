@@ -120,6 +120,7 @@ export default function MyPage(props) {
           </form>
         ) : null}
       </div>
+      <div>{sortedStories}</div>
     </div>
   );
 }
