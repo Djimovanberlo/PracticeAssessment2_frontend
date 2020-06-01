@@ -6,7 +6,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case "SINGLE_PAGE":
-      console.log("store1page", action.payload);
+      // console.log("store1page", action.payload);
       return { ...state, ...action.payload };
     default:
       return state;

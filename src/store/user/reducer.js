@@ -3,13 +3,16 @@ import { LOG_OUT, LOGIN_SUCCESS, TOKEN_STILL_VALID } from "./actions";
 const initialState = {
   token: localStorage.getItem("token"),
   name: null,
-  email: null
+  email: null,
+  id: null,
+  stories: [],
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
       localStorage.setItem("token", action.payload.token);
+      // console.log("payload", action.payload);
       return { ...state, ...action.payload };
 
     case LOG_OUT:
