@@ -35,7 +35,7 @@ export const signUp = (name, email, password) => {
         email,
         password,
       });
-
+      // console.log("databoy", response.data);
       dispatch(loginSuccess(response.data));
       dispatch(showMessageWithTimeout("success", true, "account created"));
       dispatch(appDoneLoading());
@@ -81,7 +81,7 @@ export const getUserWithStoredToken = () => {
   return async (dispatch, getState) => {
     // get token from the state
     const token = selectToken(getState());
-    console.log("token:", token);
+    // console.log("token:", token);
 
     // if we have no token, stop
     if (token === null) return;

@@ -11,14 +11,14 @@ export default function Other({ match }) {
   const {
     params: { id },
   } = match;
-  console.log(id);
+  // console.log(id);
   // https://learnwithparam.com/blog/dynamic-pages-in-react-router/
 
   useEffect(() => {
     dispatch(fetchOnePage(id));
   }, []);
 
-  console.log("YA YA", singlePage.stories);
+  // console.log("YA YA", singlePage.stories);
 
   const mappedStories = singlePage.stories.map((story) => (
     <SinglePage
