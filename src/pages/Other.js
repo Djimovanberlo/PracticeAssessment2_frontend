@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { selectSinglePage, selectStories } from "../store/singlePage/selectors";
-import fetchOnePage from "../store/singlePage/actions";
+import { fetchOnePage } from "../store/singlePage/actions";
 import { useDispatch, useSelector } from "react-redux";
 import SinglePage from "../components/Other";
 
